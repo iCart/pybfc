@@ -4,10 +4,10 @@ import sys
 from collections import defaultdict
 from io import StringIO
 
-# The data array that will represent the
+# Some global variables
 data_array = defaultdict(int)
-instruction_pointer = 0
 data_pointer = 0
+instruction_pointer = 0
 instructions = None
 
 
@@ -93,6 +93,7 @@ def main():
     with open(input_path, 'r') as input_file:
         instructions = mmap.mmap(input_file.fileno(), length=0, access=mmap.ACCESS_READ)
         start_interpreting()
+
 
 if __name__ == '__main__':
     main()
